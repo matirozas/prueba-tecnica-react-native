@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { View, Text, TextInput, ImageBackground, StyleSheet, TouchableOpacity,  } from 'react-native'
+import { View, Text, TextInput, ImageBackground, StyleSheet, TouchableOpacity, Dimensions,  } from 'react-native'
 import { Svg, Circle, Path, Line } from 'react-native-svg'
 import Nav from './Nav'
 import imagenAgente from '../../assets/images/inicio-sesion-agente-2.png'
@@ -9,7 +9,9 @@ import plusJakartaSans from '../../assets/fonts/PlusJakartaSans-Regular.ttf'
 
 
 export default function Register() {
-    
+
+    const windowWidth = Dimensions.get('window').width;
+
     const [mostrarPass,setMostrarPass]=useState(true)
     const [form,setForm]=useState({nombre:'',telefono:'',email:'',contraseña:''})
     const [valido,setValido]=useState({nombre:null,telefono:null,email:null,contraseña:null})
@@ -192,7 +194,7 @@ export default function Register() {
 
                 {/* formulario */}
                 
-
+                <View  style={{width: 352, height: 48, paddingBottom: 29, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start',}}>
                     <View style={styles.frame}>
                         <TextInput 
                             style={styles.inputForm}
@@ -203,6 +205,8 @@ export default function Register() {
                             >
                         </TextInput>
                     </View>
+                    </View>
+                    <View  style={{width: 352, height: 48, paddingBottom: 29, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start',}}>
 
                     <View style={styles.frame}>
                         <TextInput 
@@ -212,6 +216,8 @@ export default function Register() {
                             style={styles.inputForm}
                             placeholder='+54 01 0200 000'/>
                     </View>
+                    </View>
+                    <View  style={{width: 352, height: 48, paddingBottom: 29, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start',}}>
 
                     <View style={styles.__frame}>
                         < TextInput
@@ -221,8 +227,10 @@ export default function Register() {
                             style={styles.inputForm}
                             placeholder='hola@tuemail.com'/>
                     </View>
+                    </View>
 
-                <View >
+                    <View  style={{width: 352, height: 48, paddingBottom: 29, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start',}}>
+
 
                     <View style={styles.___frame}>
                         
@@ -268,8 +276,10 @@ export default function Register() {
                 </Text>
             </View>
 
+            {windowWidth >= 600 ? (
+       <ImageBackground style={styles.iniciasesiónagente2} source={imagenAgente} />
+      ) : null}
             
-            <ImageBackground style={styles.iniciasesiónagente2} source={imagenAgente} />
         </View>
     )
 }
@@ -433,7 +443,6 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
     inputForm: {
-        
         textAlign: "left",
         color: "rgba(0, 9, 41, 1)",
         fontFamily: plusJakartaSans,
@@ -441,8 +450,8 @@ const styles = StyleSheet.create({
         fontWeight: "500",
         letterSpacing: 0,
         lineHeight: 24,
+        width:2000,
         outlineWidth: 0,
-        outlineColor: 'transparent',
     },
     email: {
         
