@@ -1,4 +1,4 @@
-import { View, StyleSheet, Dimensions } from 'react-native'
+import { View, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Svg, Path } from 'react-native-svg'
 
@@ -27,15 +27,16 @@ export default function Nav() {
                 </View>
             </View>
 
-            <View style={w > 600 ? null: styles.menu}>
-                
-                <Svg style={w > 600 ? null:styles.vector} width="20" height="2" viewBox="0 0 20 2" fill="none" >
-                    <Path d="M1 1H19" stroke="#000929" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </Svg>
-                <Svg style={w > 600 ? null: styles._vector} width="20" height="2" viewBox="0 0 20 2" fill="none" >
-                    <Path d="M1 1H19" stroke="#000929" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </Svg>
-            </View>
+            <TouchableOpacity onPress={() => console.log('boton menu')}>
+                <View style={w > 600 ? null : styles.menu}>
+                    <Svg style={w > 600 ? null : styles.vector} width="20" height="2" viewBox="0 0 20 2" fill="none" >
+                        <Path d="M1 1H19" stroke="#000929" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </Svg>
+                    <Svg style={w > 600 ? null : styles._vector} width="20" height="2" viewBox="0 0 20 2" fill="none" >
+                        <Path d="M1 1H19" stroke="#000929" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </Svg>
+                </View>
+            </TouchableOpacity>
 
 
         </View >
@@ -87,10 +88,10 @@ const styles = StyleSheet.create({
 
     //mobile
     MtopNav: {
-        width: 375, height: 72, position: 'absolute',display:'flex'
+        width: 375, height: 72, position: 'absolute', display: 'flex'
     },
     Mline: {
-        width: 375, height: 0, left: 0, top: 72, position: 'absolute', border: '1.50px #F0EFFB solid',display:'flex'
+        width: 375, height: 0, left: 0, top: 72, position: 'absolute', border: '1.50px #F0EFFB solid', display: 'flex'
     },
     MleftItems: {
         left: 24, top: 16, position: 'absolute', justifyContent: 'flex-start', alignItems: 'center', gap: 48, display: 'inline-flex'
