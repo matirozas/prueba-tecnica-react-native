@@ -1,11 +1,12 @@
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import React from 'react'
 import plusJakartaSans from '../../assets/fonts/PlusJakartaSans-Regular.ttf'
+import { Link } from 'react-router-native'
 
 
 export default function BotonRegistro({ handleSubmit }) {
 
-    const handleLogin= ()=>{
+    const handleLogin = () => {
         console.log('ir a inicio de sesion')
     }
     const w = Dimensions.get('window').width
@@ -20,12 +21,14 @@ export default function BotonRegistro({ handleSubmit }) {
             </View>
             <Text style={styles.yatenésunacuentaIniciasesión}>
                 {`¿Ya tenés una cuenta?  `}
-                <TouchableOpacity onPress={()=>{
-        console.log('ir a inicio de sesion')
-    }} >
-                    <Text style={styles.iniciarSesion}>
-                        {`Iniciá sesión`}
-                    </Text>
+                <TouchableOpacity onPress={() => {
+                    console.log('ir a inicio de sesion')
+                }} >
+                    <Link to='/login'>
+                        <Text style={styles.iniciarSesion}>
+                            {`Iniciá sesión`}
+                        </Text>
+                    </Link>
                 </TouchableOpacity>
             </Text>
         </View>
@@ -82,7 +85,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0,
         lineHeight: 19.59999966621399
     },
-    iniciarSesion: { 
+    iniciarSesion: {
         fontFamily: plusJakartaSans,
         fontSize: 14,
         fontWeight: "700",
@@ -122,6 +125,6 @@ const styles = StyleSheet.create({
         letterSpacing: 0,
         lineHeight: 24
     },
-   
+
 
 })
