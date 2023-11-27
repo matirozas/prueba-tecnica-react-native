@@ -1,16 +1,20 @@
 // Formulario.js
 import React from 'react';
-import { View, TextInput, Text, StyleSheet } from 'react-native';
+import { View, TextInput, Text, StyleSheet, Dimensions } from 'react-native';
 import plusJakartaSans from '../../assets/fonts/PlusJakartaSans-Regular.ttf'    
 
-const Formulario = ({ frameValido, frameDanger, onChange, placeholder, valido }) => {
+const Formulario = ({ frameValido, frameDanger, onChange, placeholder, valido,  }) => {
+
+    const w = Dimensions.get('window').width;
+
   return (
-    <View style={styles.inputBox}>
+    <View style={w>600?styles.inputBox:styles.MinputBox}>
       <View style={valido ? frameValido : frameDanger}>
         <TextInput
           style={styles.inputForm}
           onChange={onChange}
           placeholder={placeholder}
+          placeholderTextColor={'rgba(0, 9, 41, 0.5)'}
         />
       </View>
      
@@ -27,9 +31,7 @@ inputBox: {
     width: 352, 
     height: 48, 
     paddingBottom: 29, 
-    flexDirection: 'column', 
     justifyContent: 'flex-start', 
-    alignItems: 'flex-start',
 },
 inputForm: {
     textAlign: "left",
@@ -42,30 +44,11 @@ inputForm: {
     width: 2000,
     outlineWidth: 0,
 },  
-frame: {
-    alignSelf: "stretch",
+MinputBox: {
     height: 48,
-    backgroundColor: "rgba(247, 247, 253, 1)",
-    flexDirection: "row",
+    width: 327,
     alignItems: "flex-start",
-    columnGap: 10,
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    borderWidth: 1,
-    borderColor: "rgba(224, 222, 247, 1)",
-    borderRadius: 8
+    rowGap: 8
 },
-frameDanger: {
-    alignSelf: "stretch",
-    height: 48,
-    backgroundColor: "rgba(247, 247, 253, 1)",
-    flexDirection: "row",
-    alignItems: "flex-start",
-    columnGap: 10,
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    borderWidth: 1,
-    borderColor: "red",
-    borderRadius: 8
-},
+
 })
