@@ -35,7 +35,12 @@ export default function InputContraseña({ frameValido, frameDanger, onChange, p
 
             <View style={w>600?styles._____frame:styles._____frame}>
                 <Text style={w>600?styles.debeteneralmenos8caracteres:styles.Mdebeteneralmenos8caracteres}>
-                    {w>600?'Debe tener al menos 8 caracteres.':'¿Olvidaste tu contraseña?'}
+                    {w>600?'Debe tener al menos 8 caracteres.':(
+                    <TouchableOpacity onPress={()=>console.log('Olvidaste tu contraseña')}>
+                        <Text>
+                        {'¿Olvidaste tu contraseña?'}
+                        </Text>
+                    </TouchableOpacity>)}
                 </Text>
             </View>
         </View>
