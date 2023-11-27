@@ -33,14 +33,14 @@ export default function InputContraseña({ frameValido, frameDanger, onChange, p
                 </View>
             </View>
 
-            <View style={w>600?styles._____frame:styles._____frame}>
-                <Text style={w>600?styles.debeteneralmenos8caracteres:styles.Mdebeteneralmenos8caracteres}>
-                    {w>600?'Debe tener al menos 8 caracteres.':(
-                    <TouchableOpacity onPress={()=>console.log('Olvidaste tu contraseña')}>
-                        <Text>
-                        {'¿Olvidaste tu contraseña?'}
-                        </Text>
-                    </TouchableOpacity>)}
+            <View style={w > 600 ? styles._____frame : styles._____frame}>
+                <Text style={w > 600 ? styles.debeteneralmenos8caracteres : styles.Mdebeteneralmenos8caracteres}>
+                    {w > 600 ? 'Debe tener al menos 8 caracteres.' : (
+                        <TouchableOpacity onPress={() => console.log('Olvidaste tu contraseña')}>
+                            <Text>
+                                {'¿Olvidaste tu contraseña?'}
+                            </Text>
+                        </TouchableOpacity>)}
                 </Text>
             </View>
         </View>
@@ -140,12 +140,12 @@ const styles = StyleSheet.create({
         columnGap: 38
     },
     Mdebeteneralmenos8caracteres: {
-textAlign: "right",
-color: "rgba(112, 101, 240, 1)",
-fontFamily:plusJakartaSans,
-fontSize: 14,
-fontWeight: "500",
-letterSpacing: 0,
-lineHeight: 19.59999966621399}
+        textAlign: "right",
+        color: "rgba(112, 101, 240, 1)",
+        fontFamily: plusJakartaSans,
+        fontSize: 14,
+        fontWeight: "500",
+        letterSpacing: 0,
+    }
 
 })

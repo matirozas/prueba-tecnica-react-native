@@ -56,7 +56,7 @@ export default function Register() {
                 email: form.email,
                 contraseña: form.contraseña
             }
-            fetch('https://tu-api.com/tu-endpoint', {
+            fetch('https://flexy.co.ar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -64,18 +64,18 @@ export default function Register() {
                 body: JSON.stringify(datosAEnviar),
 
             })
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error(`Error en la respuesta del servidor: ${response.status}`);
-                    }
-                    return response.json()
-                })
-                .then((data) => {
-                    console.log('Respuesta del servidor:', data)
-                })
-                .catch((error) => {
-                    console.error('Error al enviar la solicitud:', error)
-                })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Error en la respuesta del servidor: ${response.status}`);
+                }
+                return response.json()
+            })
+            .then((data) => {
+                console.log('Respuesta del servidor:', data)
+            })
+            .catch((error) => {
+                console.error('Error al enviar la solicitud:', error)
+            })
 
         } else {
             console.log('Faltan completar datos')
